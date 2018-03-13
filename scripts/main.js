@@ -20,5 +20,10 @@
     checkList.addRow.call(checkList, data);
   });
   formHandler.addInputHandler(Validation.isCompanyEmail);
+  remoteDS.getAll(function(serverResponse) {
+    serverResponse.forEach(function(order) {
+      checkList.addRow.call(checkList, order);
+    });
+  });
   console.log(formHandler);
 })(window);
